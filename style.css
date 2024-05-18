@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1 {
+    color: #3470ac;  
+}
+
+h2 {
+    color: #3470ac; 
+}
+
+h3 {
+    color: #2ecc71; 
+}
+
+header, nav, section, article, aside, footer, main {
+    padding: 1em;
+    margin: 0.5em;
+    border: 1px solid #ccc;
+}
+
+header, footer {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+form input, form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #575757;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main > section {
+    flex: 1 1 45%;
+    margin: 10px;
+}
+
+#graphics {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#myCanvas {
+    padding: 5px;
+    border: 1px solid #000000;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3498db; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    
+}
+.scrollToTopBtn:hover {
+    background-color: #2980b9; /* azul mas oscuro en hover */
+}
+
+a {
+    color: white;
+    text-decoration: none; 
+}

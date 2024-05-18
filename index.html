@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a HTML5 y CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            color: #3470ac;  
+        }
+
+        h2 {
+            color: #3470ac; 
+        }
+
+        h3 {
+            color: #2ecc71; 
+        }
+
+        header, nav, section, article, aside, footer, main {
+            padding: 1em;
+            margin: 0.5em;
+            border: 1px solid #ccc;
+        }
+
+        header, footer {
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        form input, form textarea {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #575757;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        main > section {
+            flex: 1 1 45%;
+            margin: 10px;
+        }
+
+        #graphics {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #myCanvas {
+            padding: 5px;
+            border: 1px solid #000000;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        .scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #3498db; 
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        
+        }
+        .scrollToTopBtn:hover {
+            background-color: #2980b9; /* azul mas oscuro en hover */
+        }
+
+        a {
+            color: white;
+            text-decoration: none; 
+        }
+    </style>
+    <!-- Aqui podria linkear el css, que contiene lo mismo que mi eitqueta style
+    <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+
+    <header>
+        <h1>Introducción a HTML5</h1>
+        <p>Esta página está diseñada para enseñar los conceptos básicos de HTML5 a través de su propio código.</p>
+    </header>
+
+    <nav id="#top" >
+        <ul>
+            <li><a href="#contact">Formulario de Contacto</a></li>
+            <li><a href="#content">Contenido Estructurado</a></li>
+            <li><a href="#media">Medios</a></li>
+            <li><a href="#graphics">Gráficos</a></li>
+            <li><a href="#info">Explicación del Código</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="contact">
+            <h2>Formulario de Contacto</h2>
+            <p>Este formulario utiliza campos semánticos de HTML5 como <code>&lt;input type="email"&gt;</code> y <code>&lt;input type="tel"&gt;</code> para validar automáticamente los correos electrónicos y números de teléfono ingresados.</p>
+            <form>
+                <label for="name">Nombre (Type name):</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Correo Electrónico (Type email):</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Teléfono (Type number):</label>
+                <input type="number" id="phone" name="phone" required>
+
+                <label for="phone">Teléfono (Type tel) :</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="phone">Mensaje secreto (Type password) :</label>
+                <input type="password" id="phone" name="phone" required>
+                
+                <label for="message">Mensaje (Type message) :</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <label for="button" >Mensaje (Type submit) :</label>
+                <button type="submit" name="button">Enviar</button>
+            </form>
+        </section>
+
+        <section id="content">
+            <h2>Contenido Estructurado</h2>
+            <p>Esta sección demuestra el uso de elementos semánticos de HTML5 como <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, y <code>&lt;aside&gt;</code> para estructurar el contenido de manera clara y significativa.</p>
+            <article>
+                <h3>Artículo Principal</h3>
+                <p>Este es un <mark class="highlight">texto resaltado</mark> con mark dentro de un artículo para destacar información importante.</p>
+            </article>
+            <aside>
+                <h3>Contenido Relacionado</h3>
+                <p>Esta es una sección de contenido complementario o relacionado (aside) .</p>
+            </aside>
+            <article>
+                <h3>¿Por qué no solo divs?</h3>
+                <ul>
+                        <li>Accesibilidad: Las etiquetas semánticas proporcionan información valiosa para los usuarios que dependen de lectores de pantalla y otras tecnologías de asistencia.
+                    
+                        <li>SEO (Optimización de Motores de Búsqueda): Los motores de búsqueda valoran la estructura semántica de una página web. El uso de etiquetas semánticas adecuadas puede mejorar la indexación y clasificación del contenido en los resultados de búsqueda.</li>
+                    
+                        <li>Mantenimiento y Escalabilidad: Al utilizar etiquetas semánticas, tu código será más fácil de mantener y escalar a medida que tu proyecto crezca. La estructura clara facilita la comprensión del código, lo que simplifica las actualizaciones y modificaciones en el futuro.</li>
+                    
+                        <li>Futuro-Proofing: El uso de etiquetas semánticas sigue las mejores prácticas de desarrollo web y te prepara para futuras actualizaciones y estándares. Además, demuestra un compromiso con la calidad y la accesibilidad del código.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="media">
+            <h2>Medios</h2>
+            <p>Aquí se muestra cómo utilizar las etiquetas <code>&lt;audio&gt;</code> y <code>&lt;video&gt;</code> de HTML5 para reproducir contenido multimedia.</p>
+            <article>
+                <h3>Reproducción de Audio</h3>
+                <audio controls>
+                    <source src="./utils/audio.mp3" type="audio/mp3">
+                    Tu navegador no soporta la etiqueta de audio.
+                </audio>
+            </article>
+            <article>
+                <h3>Reproducción de Video</h3>
+                <video controls width="320">
+                    <source src="./utils/video.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </article>
+            <article>
+                    <h3>Uso de iframe</h3>
+                    <p>El uso de iframe es común para incrustar diferentes tipos de contenido de otras fuentes, tales como:           
+                    Videos (por ejemplo, incrustar videos de YouTube).
+                    Mapas (por ejemplo, incrustar mapas de Google Maps).
+                    Formularios o contenido interactivo de otros sitios.
+                    Publicidad en banners.
+                    Widgets de redes sociales (por ejemplo, incrustar feeds de Twitter o Facebook).</p>
+                    <iframe frameborder="0" scrolling="no" src="https://freesound.org/embed/sound/iframe/736228/simple/medium/" width="481" height="86"></iframe>
+            </article>
+        </section>
+
+        <section id="graphics">
+            <h2>Gráficos con Canvas</h2>
+            <p>Este es un ejemplo de cómo utilizar el elemento <code>&lt;canvas&gt;</code> de HTML5 para dibujar gráficos simples.</p>
+            <canvas id="myCanvas" width="400" height="200"></canvas>
+        </section>
+
+        <section>
+            <h2>Elementos de Texto y Medición</h2>
+            <p>En esta sección se muestran varios elementos nuevos y viejos de HTML5, incluyendo <code>&lt;mark&gt;</code>, <code>&lt;small&gt;</code>, <code>&lt;time&gt;</code>, <code>&lt;meter&gt;</code>, y <code>&lt;output&gt;</code>.</p>
+            <p>Texto en tamaño normal.</p>
+            <p>Texto con <mark><code>&lt;mark&gt;</code></mark>.</p>
+            <p>Texto en tamaño pequeño utilizando <small>small aquí</small>.</p>
+            <p>Fecha y hora actual: <time datetime="2024-05-17T14:00">17 de Mayo de 2024, 14:00</time></p>
+            <p>Nivel de progreso con <code>&lt;meter&gt;</code>:</p>
+            <meter value="0.6" min="0" max="1" low="0.3" high="0.8" optimum="0.9">60%</meter>
+            <p>El valor del medidor está actualmente en 60%. El rango óptimo está entre 80% y 90%, mientras que el rango bajo es menos del 30% y el rango alto es más del 80%.</p>
+            <meter value="0.8" min="0" max="1" low="0.3" high="0.8" optimum="0.9">80%</meter>
+            <p>El rango esta en rango óptimo</p>
+            <p>Resultado del cálculo: <output>42</output></p>
+        </section>
+
+        <section id="info">
+            <h2>Explicación del Código</h2>
+            <h3>Estructura Básica de HTML5</h3>
+            <ul>
+                <li><code>&lt;!DOCTYPE html&gt;</code>: Define que el documento está usando HTML5.</li>
+                <li><code>&lt;html lang="es"&gt;</code>: Inicia el documento HTML y establece el idioma.</li>
+                <li><code>&lt;head&gt;</code>: Contiene metadatos sobre el documento.</li>
+                <ul>
+                    <li><code>&lt;meta charset="UTF-8"&gt;</code>: Define la codificación de caracteres.</li>
+                    <li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>: Hace que el diseño sea responsivo.</li>
+                    <li><code>&lt;title&gt;</code>: Título de la página web.</li>
+                </ul>
+                <li><code>&lt;style&gt;</code>: Contiene los estilos CSS.</li>
+            </ul>
+            <h3>Semántica de las Etiquetas HTML5</h3>
+            <ul>
+                <li><code>&lt;header&gt;</code>: Define el encabezado de la página o una sección. Suele contener títulos y navegación.</li>
+                <li><code>&lt;nav&gt;</code>: Representa una sección de navegación con enlaces a otras páginas o partes de la misma página.</li>
+                <li><code>&lt;main&gt;</code>: Delimita el contenido principal del documento. Debe ser único por documento.</li>
+                <li><code>&lt;section&gt;</code>: Define secciones temáticas del contenido, como capítulos o agrupaciones de contenido relacionado.</li>
+                <li><code>&lt;article&gt;</code>: Representa un contenido autónomo y autocontenido que podría ser distribuido o sindicado de forma independiente.</li>
+                <li><code>&lt;aside&gt;</code>: Contiene información relacionada de manera tangencial con el contenido principal, como barras laterales o notas al margen.</li>
+                <li><code>&lt;footer&gt;</code>: Define el pie de página de un documento o una sección, normalmente incluye información de autoría, enlaces relacionados, etc.</li>
+                <li><code>&lt;form&gt;</code>: Contiene un formulario para la entrada de datos del usuario.</li>
+                <li><code>&lt;input&gt;</code>: Define un campo de entrada de datos.</li>
+                <li><code>&lt;textarea&gt;</code>: Define un campo de entrada de texto multilínea.</li>
+                <li><code>&lt;button&gt;</code>: Representa un botón que puede ser clicado para enviar el formulario.</li>
+                <li><code>&lt;audio&gt;</code>: Usado para incrustar contenido de audio.</li>
+                <li><code>&lt;video&gt;</code>: Usado para incrustar contenido de video.</li>
+                <li><code>&lt;canvas&gt;</code>: Elemento para gráficos mediante scripts (normalmente JavaScript).</li>
+                <li><code>&lt;mark&gt;</code>: Resalta texto importante.</li>
+                <li><code>&lt;small&gt;</code>: Muestra texto en tamaño de fuente más pequeño.</li>
+                <li><code>&lt;time&gt;</code>: Representa una fecha y/o una hora en un determinado formato.</li>
+                <li><code>&lt;meter&gt;</code>: Representa una medida escalar dentro de un rango conocido, o una fracción.</li>
+                <li><code>&lt;output&gt;</code>: Representa el resultado de un cálculo o acción del usuario.</li>
+            </ul>
+        </section>
+        
+    </main>
+
+    <!-- btn con etiqueta de enlace para subir hasta arriba -->
+    <button class="scrollToTopBtn" ><a href="#top">Subir</a></button>
+    
+
+    <footer>
+        <p>Footer de la página creada para explicar los conceptos básicos de HTML5.</p>
+    </footer>
+
+    <script>
+        // Ejemplo de dibujo en canvas
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Dibujar un gráfico de barras simple
+        const data = [100, 200, 150, 300, 250, 10, 350];
+        const barWidth = 50;
+        const barGap = 10;
+        
+        data.forEach((value, index) => {
+            const x = index * (barWidth + barGap);
+            const y = canvas.height - value;
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(x, y, barWidth, value);
+        });
+    </script>
+    
+
+</body>
+</html>
